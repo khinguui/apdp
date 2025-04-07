@@ -1,0 +1,16 @@
+[
+  {
+    "Id": 4,
+    "Name": "Trieu Thanh Nguyen",
+    "Class": "SE05024",
+    "Major": "Marketing",
+    "Status": "Active"
+  },
+  {
+    "Id": 5,
+    "Name": "dat",
+    "Class": "Test",
+    "Major": "apdp",
+    "Status": "Inactive"
+  }
+]

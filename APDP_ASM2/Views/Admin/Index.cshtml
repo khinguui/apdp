@@ -1,0 +1,141 @@
+﻿@{
+    ViewData["Title"] = "Admin Home Page";
+    Layout = "~/Views/Shared/LayoutAdmin.cshtml";
+}
+@section header {
+    <header class="main-header clearfix" role="header">
+        <div class="logo">
+            <a href="#"><em>FPT</em> BTEC</a>
+        </div>
+        @*  <a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a> *@
+        <nav id="menu" class="main-nav" role="navigation">
+            <ul class="main-menu">
+                <li><a href="/Student/ManageStudent" class="external">Students Management</a></li>
+                <li><a href="/Course/ManageCourse" class="external">Courses Management</a></li>
+                <li><a href="/Teacher/ManageTeacher" class="external">Teachers Management</a></li>
+                <li><a href="/Class/ManageClass" class="external">Classes Management</a></li>
+                <li><a href="/Authentication/Logout" class="external">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+}
+<section class="section main-banner" id="top" data-section="section1">
+    <video autoplay muted loop id="bg-video">
+        <source src="~/assets/images/course-video.mp4" type="video/mp4" />
+    </video>
+
+    <div class="video-overlay header-text">
+        <div class="caption">
+            <h6>Graduate School of Management</h6>
+            <h2><em>FPT</em> BTEC</h2>
+            <div class="main-button">
+                <div class="scroll-to-section"><a href="#section2">Discover more</a></div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="features">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-12">
+                <div class="features-post">
+                    <div class="features-content">
+                        <div class="content-show">
+                            <h4><i class="fa fa-pencil"></i>All Courses</h4>
+                        </div>
+                        <div class="content-hide">
+                            <p>Curabitur id eros vehicula, tincidunt libero eu, lobortis mi. In mollis eros a posuere imperdiet. Donec maximus elementum ex. Cras convallis ex rhoncus, laoreet libero eu, vehicula libero.</p>
+                            <p class="hidden-sm">Curabitur id eros vehicula, tincidunt libero eu, lobortis mi. In mollis eros a posuere imperdiet.</p>
+                            <div class="scroll-to-section"><a href="#section2">More Info.</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-12">
+                <div class="features-post second-features">
+                    <div class="features-content">
+                        <div class="content-show">
+                            <h4><i class="fa fa-graduation-cap"></i>Virtual Class</h4>
+                        </div>
+                        <div class="content-hide">
+                            <p>Curabitur id eros vehicula, tincidunt libero eu, lobortis mi. In mollis eros a posuere imperdiet. Donec maximus elementum ex. Cras convallis ex rhoncus, laoreet libero eu, vehicula libero.</p>
+                            <p class="hidden-sm">Curabitur id eros vehicula, tincidunt libero eu, lobortis mi. In mollis eros a posuere imperdiet.</p>
+                            <div class="scroll-to-section"><a href="#section3">Details</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-12">
+                <div class="features-post third-features">
+                    <div class="features-content">
+                        <div class="content-show">
+                            <h4><i class="fa fa-book"></i>Real Meeting</h4>
+                        </div>
+                        <div class="content-hide">
+                            <p>Curabitur id eros vehicula, tincidunt libero eu, lobortis mi. In mollis eros a posuere imperdiet. Donec maximus elementum ex. Cras convallis ex rhoncus, laoreet libero eu, vehicula libero.</p>
+                            <p class="hidden-sm">Curabitur id eros vehicula, tincidunt libero eu, lobortis mi. In mollis eros a posuere imperdiet.</p>
+                            <div class="scroll-to-section"><a href="#section4">Read More</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section why-us" data-section="section2">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-heading">
+                    <h2>Why choose FPT BTEC School?</h2>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div id='tabs'>
+                    <ul>
+                        <li><a href='#tabs-1'>Industry-Relevant Curriculum</a></li>
+                        <li><a href='#tabs-2'>Strong Industry Connections</a></li>
+                        <li><a href='#tabs-3'>State-of-the-Art Facilities</a></li>
+                    </ul>
+                    <section class='tabs-content'>
+                        <article id='tabs-1'>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <img src="~/assets/images/choose-us-image-01.png" alt="">
+                                </div>
+                                <div class="col-md-6">
+                                    <h4>Industry-Relevant Curriculum</h4>
+                                    <p>FPT BTEC offers programs that are highly relevant to the needs of the industry. With a focus on technology and IT-related fields, the curriculum is designed in collaboration with industry experts to ensure that students acquire skills and knowledge that are in demand in the job market.</p>
+                                </div>
+                            </div>
+                        </article>
+                        <article id='tabs-2'>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <img src="~/assets/images/choose-us-image-02.png" alt="">
+                                </div>
+                                <div class="col-md-6">
+                                    <h4>Strong Industry Connections</h4>
+                                    <p>The school has established strong connections with leading companies in the technology sector, both domestically and internationally.</p>
+                                    <p>These partnerships provide students with opportunities for internships, practical training, and potential employment upon graduation. Students benefit from exposure to real-world projects and networking opportunities that enhance their career prospects.</p>
+                                </div>
+                            </div>
+                        </article>
+                        <article id='tabs-3'>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <img src="~/assets/images/choose-us-image-03.png" alt="">
+                                </div>
+                                <div class="col-md-6">
+                                    <h4>State-of-the-Art Facilities</h4>
+                                    <p>FPT BTEC is equipped with modern facilities and resources to support student learning and research activities. From advanced computer labs to specialized equipment for engineering and design courses, the school provides a conducive environment for students to explore and experiment with the latest technologies. Access to cutting-edge tools and facilities enhances the overall learning experience and prepares students for success in their chosen fields.</p>
+                                </div>
+                            </div>
+                        </article>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,67 @@
+﻿@model Student
+@{
+    ViewData["Title"] = "Edit Student";
+    Layout = "~/Views/Shared/LayoutAdmin.cshtml";
+}
+<link href="~/Manage.css" rel="stylesheet" />
+@section header {
+    <header class="main-header clearfix" role="header">
+        <div class="logo">
+            <a href="#"><em>FPT</em> BTEC</a>
+        </div>
+        <a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
+        <nav id="menu" class="main-nav" role="navigation">
+            <ul class="main-menu">
+                <li><a href="/Admin/Index" class="external">Home</a></li>
+                <li><a href="/Authentication/Logout" class="external">Logout</a></li>
+
+
+            </ul>
+        </nav>
+    </header>
+}
+<section class="content">
+    <h1 class="text-center" style="color: orange; margin-top:80px;">Edit Student</h1>
+
+    @using (Html.BeginForm("Save", "Student", FormMethod.Post))
+    {
+
+
+        @Html.HiddenFor(m => m.Id)
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Name, new { @class = "control-label" })
+            @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.DoB, new { @class = "control-label" })
+            @Html.TextBoxFor(m => m.DoB, "{0:yyyy-MM-dd}", new { @class = "form-control", type = "date" })
+            @Html.ValidationMessageFor(m => m.DoB, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Email, new { @class = "control-label" })
+            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Address, new { @class = "control-label" })
+            @Html.TextBoxFor(m => m.Address, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Address, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Major, new { @class = "control-label" })
+            @Html.TextBoxFor(m => m.Major, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Major, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group text-right">
+            <!-- Đổi lớp form-group thành text-right để căn phải -->
+            <button type="submit" class="btn btn-primary">Save</button>
+            <button type="submit" class="btn btn-warning">Cancel</button>
+        </div>
+    }
+
+</section>

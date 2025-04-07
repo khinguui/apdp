@@ -1,0 +1,73 @@
+﻿@model Course
+@{
+    ViewData["Title"] = "Edit Course";
+    Layout = "~/Views/Shared/LayoutAdmin.cshtml";
+}
+<link href="~/Manage.css" rel="stylesheet" />
+@section header {
+    <header class="main-header clearfix" role="header">
+        <div class="logo">
+            <a href="#"><em>FPT</em> BTEC</a>
+        </div>
+        <a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
+        <nav id="menu" class="main-nav" role="navigation">
+            <ul class="main-menu">
+                <li><a href="/Admin/Index" class="external">Home</a></li>
+                <li><a href="/Authentication/Logout" class="external">Logout</a></li>
+
+
+            </ul>
+        </nav>
+    </header>
+}
+<section class="content">
+    <h1 class="text-center" style="color: orange; margin-top:80px;">Edit Course</h1>
+
+    @using (Html.BeginForm("EditCourse", "Course", FormMethod.Post))
+    {
+        <div class="form-group">
+            @Html.HiddenFor(m => m.Id)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Name, new { Class = "control-label" })
+            @Html.TextBoxFor(m => m.Name, new { Class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Class, new { Class = "control-label" })
+
+            @Html.DropDownListFor(m => m.Class, new SelectList(ViewBag.SelectClass, "ClassName", "ClassName"))
+            @Html.ValidationMessageFor(m => m.Class, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Major, new { Class = "control-label" })
+            @Html.TextBoxFor(m => m.Major, new { Class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Major, "", new { @class = "text-danger" })
+        </div>
+       
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Status, new { Class = "control-label" })
+            @Html.DropDownListFor(m => m.Status, new SelectList(new[]
+                     {
+        new SelectListItem { Text = "Active", Value = "Active" },
+        new SelectListItem { Text = "Inactive", Value = "Inactive" },
+        // Add more status options as needed
+        }, "Value", "Text"), "-- Select Status --", new { Class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Status, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group text-right">
+            <!-- Đổi lớp form-group thành text-right để căn phải -->
+            <button type="submit" class="btn btn-primary">Save</button>
+            <button type="button" id="cancelBtn" class="btn btn-warning">Cancel</button>
+        </div>
+    }
+    <script>
+        document.getElementById("cancelBtn").addEventListener("click", function () {
+            window.location.href = "/Course/ManageCourse";
+        });
+    </script>
+</section>

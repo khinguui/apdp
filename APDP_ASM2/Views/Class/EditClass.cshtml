@@ -1,0 +1,57 @@
+﻿@model Class
+@{
+    ViewData["Title"] = " Edit Class";
+    Layout = "~/Views/Shared/LayoutAdmin.cshtml";
+}
+<link href="~/Manage.css" rel="stylesheet" />
+@section header {
+    <header class="main-header clearfix" role="header">
+        <div class="logo">
+            <a href="#"><em>FPT</em> BTEC</a>
+        </div>
+        <a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
+        <nav id="menu" class="main-nav" role="navigation">
+            <ul class="main-menu">
+                <li><a href="/Admin/Index" class="external">Home</a></li>
+                <li><a href="/Authentication/Logout" class="external">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+}
+<section class="content">
+    <h1 class="text-center" style="color: orange; margin-top:80px;">Edit Class</h1>
+
+@using (Html.BeginForm("Save", "Class", FormMethod.Post))
+{
+    @Html.HiddenFor(m => m.Id)
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.ClassName, new { Class = "control-label" })
+        @Html.TextBoxFor(m => m.ClassName, new { Class = "form-control" })
+            @Html.ValidationMessageFor(m => m.ClassName, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Major, new { Class = "control-label" })
+        @Html.TextBoxFor(m => m.Major, new { Class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Major, "", new { @class = "text-danger" })
+
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Lecturer, new { Class = "control-label" })
+        @Html.TextBoxFor(m => m.Lecturer, new { Class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Lecturer, "", new { @class = "text-danger" })
+
+    </div>
+    <div class="form-group text-right">
+        <!-- Đổi lớp form-group thành text-right để căn phải -->
+        <button type="submit" class="btn btn-primary">Save</button>
+        <button type="button" id="cancelBtn" class="btn btn-warning">Cancel</button>
+    </div>
+
+}
+    <script>
+        document.getElementById("cancelBtn").addEventListener("click", function () {
+            window.location.href = "/Class/ManageClass";
+        });
+    </script>
+    </section>

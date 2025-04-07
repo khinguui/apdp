@@ -1,0 +1,107 @@
+﻿
+@{
+    ViewData["Title"] = "ManageStudent";
+    Layout = "~/Views/Shared/LayoutAdmin.cshtml";
+}
+@* <link href="~/admin.css" rel="stylesheet" /> *@
+@model IEnumerable<Student>
+@section header {
+    <header class="main-header clearfix" role="header">
+        <div class="logo">
+            <a href="#"><em>FPT</em> BTEC</a>
+        </div>
+        <a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
+        <nav id="menu" class="main-nav" role="navigation">
+            <ul class="main-menu">
+                <li><a href="/Admin/Index" class="external">Home</a></li>
+                <li><a href="/Course/ManageCourse" class="external">Courses Management</a></li>
+                <li><a href="/Teacher/ManageTeacher" class="external">Teacher Management</a></li>
+                <li><a href="/Class/ManageClass" class="external">Classes Management</a></li>
+                <li><a href="/Authentication/Logout" class="external">Logout</a></li>
+
+
+            </ul>
+        </nav>
+    </header>
+}
+
+<section class="content">
+    <h1 style="margin-top: 80px; color: orange;" class="text-center mb-4">Student List</h1>
+    <div class="d-flex justify-content-start mb-3">
+        <form method="get" asp-action="ManageStudent" class="form-inline">
+            <div class="form-group mb-2">
+                <input type="text" name="searchQuery" class="form-control" placeholder="Search by name or major" value="@ViewBag.SearchQuery" style="width: 250px;" />
+            </div>
+            <button class="btn btn-primary mb-2 ml-2" type="submit">Search</button>
+        </form>
+    </div>
+    <div class="d-flex justify-content-between mt-3">
+        <a class="btn btn-success" asp-controller="Student" asp-action="NewStudent">New Student</a>
+        <a class="btn btn-secondary" asp-controller="Student" asp-action="ManageStudent">Back</a>
+    </div>
+    <div class="table-responsive">
+         @if (Model != null && Model.Any())
+        {
+        <table class="table table-bordered table-hover">
+            <thead class="bg-primary text-white">
+                <tr>
+                    
+                    <th class="text-center">Name</th>
+                    <th class="text-center">Date of Birth</th>
+                    <th class="text-center">Email</th>
+                    <th class="text-center">Address</th>
+                    <th class="text-center">Major</th>
+                    <th class="text-center">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        
+                        <td class="text-center">@item.Name</td>
+                        <td class="text-center">@item.DoB</td>
+                        <td class="text-center">@item.Email</td>
+                        <td class="text-center">@item.Address</td>
+                        <td class="text-center">@item.Major</td>
+                        <td class="text-center">
+                            <div class="btn-group" role="group">
+                                <a class="btn btn-danger mr-1" href="@Url.Action("Delete","Student",new {id=item.Id})">Delete</a>
+                                <a class="btn btn-warning" href="@Url.Action("EditStudent","Student",new {id=item.Id})">Edit</a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+
+           
+        </table>
+        }
+        else
+        {
+            <div class="alert alert-info" role="alert">
+                No records found.
+            </div>
+        }
+            <div class="d-flex justify-content-center">
+                <nav aria-label="Page navigation">
+                    <ul class="pagination">
+                        <li class="page-item @(ViewBag.CurrentPage == 1 ? "disabled" : "")">
+                        <a class="page-link" href="@Url.Action("ManageStudent", new { searchQuery = ViewBag.SearchQuery, page = ViewBag.CurrentPage - 1 })" tabindex="-1">Previous</a>
+                        </li>
+                        @for (int i = 1; i <= ViewBag.TotalPages; i++)
+                        {
+                            <li class="page-item @(i == ViewBag.CurrentPage ? "active" : "")">
+                            <a class="page-link" href="@Url.Action("ManageStudent", new { searchQuery = ViewBag.SearchQuery, page = i })">@i</a>
+                            </li>
+                        }
+                        <li class="page-item @(ViewBag.CurrentPage == ViewBag.TotalPages ? "disabled" : "")">
+                        <a class="page-link" href="@Url.Action("ManageStudent", new { searchQuery = ViewBag.SearchQuery, page = ViewBag.CurrentPage + 1 })">Next</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+       
+    </div>
+</section>
+

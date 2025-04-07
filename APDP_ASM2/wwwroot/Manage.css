@@ -1,0 +1,28 @@
+﻿.content {
+    background-color: #f5f5f5; /* Màu nền */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+/* CSS cho tiêu đề */
+h1 {
+    font-weight: bold;
+}
+
+/* CSS cho các label */
+.control-label {
+    font-weight: bold;
+}
+
+/* CSS cho các input và button */
+.form-control {
+    margin-top: 1px;
+}
+
+/* CSS cho nút Cancel */
+.btn-warning {
+    margin-left: 10px;
+}
+

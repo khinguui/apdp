@@ -1,0 +1,53 @@
+﻿
+@{
+    ViewData["Title"] = "ViewTeacher";
+    Layout = "~/Views/Shared/LayoutAdmin.cshtml";
+}
+@model IEnumerable<Teacher>
+<link href="~/User.css" rel="stylesheet"/>
+@section header {
+    <header class="main-header clearfix" role="header">
+        <div class="logo">
+            <a href="#"><em>FPT</em> BTEC</a>
+        </div>
+        <a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
+        <nav id="menu" class="main-nav" role="navigation">
+            <ul class="main-menu">
+                <li><a href="/Authentication/Logout" class="external">Logout</a></li>
+
+
+            </ul>
+        </nav>
+    </header>
+}
+<section class="content">
+    <h1 class="text-center" style="color: orange; margin-top:80px;">Teacher List</h1>
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+            <thead class="bg-primary text-white">
+        <tr>
+            <td>Name</td>
+            <td>Date of Birth</td>
+            <td>Course</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.DoB</td>
+                <td>@item.Course</td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+<ul>
+    <li>
+        <a class="btn btn-primary" asp-controller="Teacher" asp-action="Index">Back to HomePage</a>
+    </li>
+</ul>
+</div>
+</section>
+

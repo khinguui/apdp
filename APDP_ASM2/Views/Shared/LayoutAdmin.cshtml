@@ -1,0 +1,207 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="~/footer.css" rel="stylesheet" />
+
+    <title>FPT BTEC</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="~/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="~/assets/css/fontawesome.css">
+    <link rel="stylesheet" href="~/assets/css/templatemo-grad-school.css">
+    <link rel="stylesheet" href="~/assets/css/owl.css">
+    <link rel="stylesheet" href="~/assets/css/lightbox.css">
+    <!--
+
+    TemplateMo 557 Grad School
+
+    https://templatemo.com/tm-557-grad-school
+
+    -->
+</head>
+
+<body>
+    @RenderSection("header", false)
+
+    @RenderBody()
+    <section class="info_section layout_padding2">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-lg-3 info_col">
+                    <div class="info_contact">
+                        <h4>
+                            Address
+                        </h4>
+                        <div class="contact_link_box">
+                            <a href="">
+                                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                <span>
+                                    FPT BTEC, 13 P. Trịnh Văn Bô, Xuân Phương, Nam Từ Liêm, Hà Nội
+                                </span>
+                            </a>
+                            <a href="">
+                                <i class="fa fa-phone" aria-hidden="true"></i>
+                                <span>
+                                    Call +84 0989808882
+                                </span>
+                            </a>
+                            <a href="">
+                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                                <span>
+                                   a@gmail.com
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="info_social">
+                        <a href="">
+                            <i class="fa fa-facebook" aria-hidden="true"></i>
+                        </a>
+                        <a href="">
+                            <i class="fa fa-twitter" aria-hidden="true"></i>
+                        </a>
+                        <a href="">
+                            <i class="fa fa-linkedin" aria-hidden="true"></i>
+                        </a>
+                        <a href="">
+                            <i class="fa fa-instagram" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 info_col">
+                    <div class="info_detail">
+                        <h4>
+                            Info
+                        </h4>
+                        <p>
+                            FPT BTEC is a college belonging to the education system of FPT Group, one of the leading technology corporations in Vietnam. The school was established in 2006 with the goal of providing high quality training programs in information technology and engineering for students.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-2 mx-auto info_col">
+                    <div class="info_link_box">
+                        <h4>
+                            Links
+                        </h4>
+                        <div class="info_links">
+                            <a class="active" href="index.html">
+                                Home
+                            </a>
+                            <a class="" href="about.html">
+                                About
+                            </a>
+                            <a class="" href="service.html">
+                                Services
+                            </a>
+                            <a class="" href="why.html">
+                                Why Us
+                            </a>
+                            <a class="" href="team.html">
+                                Team
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 info_col ">
+                    <h4>
+                        Subscribe
+                    </h4>
+                    <form action="#">
+                        <input type="text" placeholder="Enter email" />
+                        <button type="submit">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- end info section -->
+    <!-- footer section -->
+    <section class="footer_section">
+        <div class="container">
+            <p>
+                &copy; <span id="displayYear"></span> Design by 
+                <a href="https://html.design/">Group 1 </a>
+            </p>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <!-- Bootstrap core JavaScript -->
+    <script src="~/vendor/jquery/jquery.min.js"></script>
+    <script src="~/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script src="~/assets/js/isotope.min.js"></script>
+    <script src="~/assets/js/owl-carousel.js"></script>
+    <script src="~/assets/js/lightbox.js"></script>
+    <script src="~/assets/js/tabs.js"></script>
+    <script src="~/assets/js/video.js"></script>
+    <script src="~/assets/js/slick-slider.js"></script>
+    <script src="~/assets/js/custom.js"></script>
+    <script>
+        //according to loftblog tut
+        $('.nav li:first').addClass('active');
+
+        var showSection = function showSection(section, isAnimate) {
+            var
+                direction = section.replace(/#/, ''),
+                reqSection = $('.section').filter('[data-section="' + direction + '"]'),
+                reqSectionPos = reqSection.offset().top - 0;
+
+            if (isAnimate) {
+                $('body, html').animate({
+                    scrollTop: reqSectionPos
+                },
+                    800);
+            } else {
+                $('body, html').scrollTop(reqSectionPos);
+            }
+
+        };
+
+        var checkSection = function checkSection() {
+            $('.section').each(function () {
+                var
+                    $this = $(this),
+                    topEdge = $this.offset().top - 80,
+                    bottomEdge = topEdge + $this.height(),
+                    wScroll = $(window).scrollTop();
+                if (topEdge < wScroll && bottomEdge > wScroll) {
+                    var
+                        currentId = $this.data('section'),
+                        reqLink = $('a').filter('[href*=\\#' + currentId + ']');
+                        reqLink.closest('li').addClass('active').
+                        siblings().removeClass('active');
+                }
+            });
+        };
+
+        $('.main-menu, .scroll-to-section').on('click', 'a', function (e) {
+            if ($(e.target).hasClass('external')) {
+                return;
+            }
+            e.preventDefault();
+            $('#menu').removeClass('active');
+            showSection($(this).attr('href'), true);
+        });
+
+        $(window).scroll(function () {
+            checkSection();
+        });
+    </script>
+</body>
+
+</html>
+

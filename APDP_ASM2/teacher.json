@@ -1,0 +1,32 @@
+[
+  {
+    "Id": 3,
+    "Name": "\u00E1dadasd",
+    "DoB": "2024-08-02",
+    "Course": "dat"
+  },
+  {
+    "Id": 4,
+    "Name": "Trieu Thanh Nguyen",
+    "DoB": "2024-08-01",
+    "Course": "Trieu Thanh Nguyen"
+  },
+  {
+    "Id": 5,
+    "Name": "wrewr",
+    "DoB": "2021-02-03",
+    "Course": "Trieu Thanh Nguyen"
+  },
+  {
+    "Id": 6,
+    "Name": "dat",
+    "DoB": "2009-03-04",
+    "Course": "Trieu Thanh Nguyen"
+  },
+  {
+    "Id": 7,
+    "Name": "me",
+    "DoB": "2023-02-02",
+    "Course": "dat"
+  }
+]

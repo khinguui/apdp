@@ -1,0 +1,86 @@
+[
+  {
+    "Id": 0,
+    "UserName": "admin",
+    "Pass": "123",
+    "ConfirmPass": null,
+    "Role": "Admin"
+  },
+  {
+    "Id": 0,
+    "UserName": "teacher",
+    "Pass": "123",
+    "ConfirmPass": "123",
+    "Role": "Teacher"
+  },
+  {
+    "Id": 0,
+    "UserName": "hieu",
+    "Pass": "123",
+    "ConfirmPass": "123",
+    "Role": "Teacher"
+  },
+  {
+    "Id": 0,
+    "UserName": "dat",
+    "Pass": "123",
+    "ConfirmPass": "123",
+    "Role": "Student"
+  },
+  {
+    "Id": 0,
+    "UserName": "test",
+    "Pass": "123",
+    "ConfirmPass": "123",
+    "Role": "Teacher"
+  },
+  {
+    "Id": 0,
+    "UserName": "student",
+    "Pass": "123",
+    "ConfirmPass": "123",
+    "Role": "Student"
+  },
+  {
+    "Id": 0,
+    "UserName": "student1",
+    "Pass": "1",
+    "ConfirmPass": "1",
+    "Role": "Student"
+  },
+  {
+    "Id": 0,
+    "UserName": "le",
+    "Pass": "123",
+    "ConfirmPass": "123",
+    "Role": "Teacher"
+  },
+  {
+    "Id": 0,
+    "UserName": "Tuan anh",
+    "Pass": "123",
+    "ConfirmPass": "123",
+    "Role": "Teacher"
+  },
+  {
+    "Id": 0,
+    "UserName": "TUn Anh",
+    "Pass": "123",
+    "ConfirmPass": "123",
+    "Role": "Teacher"
+  },
+  {
+    "Id": 0,
+    "UserName": "tun",
+    "Pass": "123",
+    "ConfirmPass": "123",
+    "Role": "Student"
+  },
+  {
+    "Id": 0,
+    "UserName": "tuananh123",
+    "Pass": "123",
+    "ConfirmPass": "123",
+    "Role": "Student"
+  }
+]

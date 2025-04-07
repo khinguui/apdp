@@ -1,0 +1,22 @@
+﻿@model IEnumerable<Teacher>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/LayoutUser.cshtml";
+}
+@section header {
+    <header class="main-header clearfix" role="header">
+        <div class="logo">
+            <a href="#"><em>FPT</em> BTEC</a>
+
+        </div>
+        
+        <a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
+       
+        <nav id="menu" class="main-nav" role="navigation">
+            <ul class="main-menu">
+                <li><a href="/Authentication/Logout" class="external">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+}
+

@@ -1,0 +1,106 @@
+﻿@model User
+@{
+    Layout = "~/Views/Shared/_layoutLogin.cshtml";
+}
+@using (Html.BeginForm("Register", "Authentication", FormMethod.Post, new { @class = "form-wrapper sign-up" }))
+{
+    <body>
+        <section class="h-100">
+            <div class="container h-100">
+                <div class="row justify-content-sm-center h-100">
+                    <div class="col-xxl-4 col-xl-5 col-lg-5 col-md-7 col-sm-9">
+                        <div class="text-center my-5">
+                            <img src="https://fpt.com/-/media/project/fpt-corporation/fpt/common/images/navigation/logo/fpt-logo.svg" alt="logo" width="100">
+                        </div>
+                        <div class="card shadow-lg">
+                            <div class="card-body p-5">
+                                <h1 class="fs-4 card-title fw-bold mb-4">Register</h1>
+                                <form method="POST" class="needs-validation" novalidate="" autocomplete="off">
+                                    <div class="mb-3">
+                                        <label class="mb-2 text-muted" for="username">Username</label>
+                                        @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", @id = "username", @required = "required", @autofocus = "autofocus" })
+                                        <div class="invalid-feedback">
+                                            Username is required
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label class="mb-2 text-muted" for="password">Password</label>
+                                        @Html.PasswordFor(m => m.Pass, new { @class = "form-control", @id = "password", @required = "required" })
+                                        <div class="invalid-feedback">
+                                            Password is required
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label class="mb-2 text-muted" for="confirmPassword">Confirm Password</label>
+                                        @Html.PasswordFor(m => m.ConfirmPass, new { @class = "form-control", @id = "confirmPassword", @required = "required" })
+                                        @Html.ValidationMessageFor(m => m.ConfirmPass)
+                                        <div class="invalid-feedback">
+                                            Please confirm your password
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label class="mb-2 text-muted">Role</label>
+                                        <div class="role-buttons">
+                                            <button type="button" class="toggle-button btn btn-outline-primary" data-value="Teacher">Teacher</button>
+                                            <button type="button" class="toggle-button btn btn-outline-primary" data-value="Student">Student</button>
+                                        </div>
+                                        <input type="hidden" name="Role" id="selectedRole" value="">
+                                    </div>
+
+                                    <div class="mb-3 form-check">
+                                        <input type="checkbox" class="form-check-input" id="terms">
+                                        <label class="form-check-label" for="terms">I agree to the terms & conditions</label>
+                                    </div>
+
+                                    <div class="align-items-center d-flex">
+                                        <button type="submit" class="btn btn-primary ms-auto">
+                                            Sign Up
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="card-footer py-3 border-0">
+                                <div class="text-center">
+                                    Already have an account? <a href="#" class="text-dark signInBtn-link">Login</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center mt-5 text-muted">
+                            Copyright &copy; 2017-2021 &mdash; FPT Corporation
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script src="js/login.js"></script>
+    </body>
+}
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Add event listener to the sign-up link
+        document.querySelector(".signInBtn-link").addEventListener("click", function (event) {
+            // Prevent the default action of the link
+            event.preventDefault();
+            // Redirect to the registration page
+            window.location.href = "/Authentication/Login"; // Update this path with the correct path to your registration page
+        });
+    });
+    document.addEventListener("DOMContentLoaded", function () {
+        const toggleButtons = document.querySelectorAll(".toggle-button");
+        const hiddenInput = document.getElementById("selectedRole");
+
+        toggleButtons.forEach(button => {
+            button.addEventListener("click", function () {
+                toggleButtons.forEach(btn => btn.classList.remove("active"));
+                this.classList.add("active");
+                hiddenInput.value = this.getAttribute("data-value");
+            });
+        });
+    });
+
+
+</script>
